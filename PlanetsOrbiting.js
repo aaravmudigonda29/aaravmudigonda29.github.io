@@ -29,8 +29,17 @@ class Planet {
   }
 }
 
+function drawSmile(x, y) {
+  fill("white");
+  circle(x, y, 50);
+  circle(x+125, y, 50);
+  fill("brown");
+  circle(x, y, 10);
+  circle(x+125, y, 10);
+}
+
 let planets;
-function setup() {
+tinfunction setup() {
   createCanvas(windowWidth, windowHeight);
   cx = width / 2;
   cy = height / 2;
@@ -52,9 +61,13 @@ function draw() {
   background(0);
 
   for (let planet of planets) {
+    fill("white");
     planet.update();
     planet.draw();
   }
+
+  drawSmile(250, 350);
+  
   
  // for (let i = 0; i < n; i++) {
    // let x = startX + xStep * i;
